@@ -87,13 +87,17 @@ function best_of_five(){
         let computerChoice = getComputerChoice();
         // Get the result of 1 round from playRound function
         let roundResult = playRound(playerChoice, computerChoice);
+        
+        // If round lost, decrement rounds left and increase computer score
         if(roundResult==0){
             roundsLeft--;
-            computerScore += 2;
+            computerScore += 1;
         }
+
+        // If round won, decrement rounds left and increase player score
         else if(roundResult==2){
             roundsLeft--;
-            playerScore += 2;
+            playerScore += 1;
         }
     }
     //At the end check who has the higher score and declare the winner
