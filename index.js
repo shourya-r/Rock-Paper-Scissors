@@ -59,15 +59,18 @@ function playRound(playerChoice, computerChoice){
 
     // return the output based on result
     if(result === 0){
-        return "You lost the round!";
+        console.log("You lost the round!");
     }
     else if(result === 1){
-        return "The round is a tie!";
+        console.log("The round is a tie!");
     }
     else{
-        return "You won the round!";
+        console.log("You won the round!");
     }
+    return result;
 }
+
+
 
 
 
