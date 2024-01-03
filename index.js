@@ -11,14 +11,6 @@ function getComputerChoice(){
     return getRandom(choices);
 }
 
-// 2D Result Array
-let resultArr = [
-    //         R P S
-        /*R*/ [1,0,2]
-        /*P*/ [2,1,0]
-        /*S*/ [0,2,1]
-    ]
-
 // Function that will play 1 round for us 
 // Takes playerChoice and computerChoice as input
 function playRound(playerChoice, computerChoice){
@@ -26,6 +18,14 @@ function playRound(playerChoice, computerChoice){
     // capitalised inputs from player
     let playerChoice_lower = playerChoice.toLowerCase();
     let computerChoice_lower = computerChoice.toLowerCase();
+    
+    // 2D Result Array
+    let resultArr = [
+        //         R P S
+            /*R*/ [1,0,2]
+            /*P*/ [2,1,0]
+            /*S*/ [0,2,1]
+        ]
     
     // Define indexes for player choice and computer choice to check result
     // from 2D Array
