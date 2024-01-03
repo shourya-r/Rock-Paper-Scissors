@@ -22,9 +22,9 @@ function playRound(playerChoice, computerChoice){
     // 2D Result Array
     let resultArr = [
         //         R P S
-            /*R*/ [1,0,2]
-            /*P*/ [2,1,0]
-            /*S*/ [0,2,1]
+            /*R*/ [1,0,2],
+            /*P*/ [2,1,0],
+            /*S*/ [0,2,1],
         ]
     
     // Define indexes for player choice and computer choice to check result
@@ -41,7 +41,7 @@ function playRound(playerChoice, computerChoice){
         playerIndex = 2;
     }
 
-    if(computerChoice_lowerl==="rock"){
+    if(computerChoice_lower==="rock"){
         computerIndex = 0;
     }
     else if(computerChoice_lower==="paper"){
@@ -65,4 +65,6 @@ function playRound(playerChoice, computerChoice){
         return "You won the round!";
     }
 }
+
+
 
