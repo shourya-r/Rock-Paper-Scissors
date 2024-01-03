@@ -11,6 +11,7 @@ function getComputerChoice(){
     return getRandom(choices);
 }
 
+
 // Function that will play 1 round for us 
 // Takes playerChoice and computerChoice as input
 function playRound(playerChoice, computerChoice){
@@ -70,6 +71,33 @@ function playRound(playerChoice, computerChoice){
     return result;
 }
 
+// Implementing the BO5 game function
+
+function best_of_five(){
+    //Take input from user using prompt
+    let roundsLeft = 5;
+    
+    // Initialising the player and computer score to 0
+    let playerScore = 0; 
+    let computerScore = 0;
+
+    // Run a while loop until there are no rounds left
+    while(roundsLeft>0){
+        let playerChoice = prompt("Pick one: Rock, Paper or Scissors");
+        let computerChoice = getComputerChoice();
+        // Get the result of 1 round from playRound function
+        let roundResult = playRound(playerChoice, computerChoice);
+        if(roundResult==0){
+            roundsLeft--;
+            computerScore += 2;
+        }
+        else if(roundResult==2){
+            roundsLeft--;
+            playerScore += 2;
+        }
+    }
+
+}
 
 
 
