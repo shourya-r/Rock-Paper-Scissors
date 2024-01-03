@@ -95,15 +95,16 @@ function best_of_five(){
             roundsLeft--;
             playerScore += 2;
         }
-
-        //At the end check who has the higher score and declare the winner
-        if(playerScore>computerScore){
-            console.log("You won the game!");
-        }
-        else{
-            console.log("You lost the game. Better luck next time!");
-        }
+    }
+    //At the end check who has the higher score and declare the winner
+    if(playerScore>computerScore){
+        console.log("You won the game!");
+    }
+    else{
+        console.log("You lost the game. Better luck next time!");
     }
 
 }
+
+best_of_five();
 
