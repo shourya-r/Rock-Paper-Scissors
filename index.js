@@ -14,6 +14,9 @@ function getComputerChoice(){
 // Function that will play 1 round for us 
 // Takes playerChoice and computerChoice as input
 function playRound(playerChoice, computerChoice){
+    console.log("You picked: " + playerChoice.slice(0,1).toUpperCase() + playerChoice.slice(1).toLowerCase());
+    console.log("Computer picked: " + computerChoice.slice(0,1).toUpperCase() + computerChoice.slice(1).toLowerCase());
+
     // convert string to lowercase to account for irregularly
     // capitalised inputs from player
     let playerChoice_lower = playerChoice.toLowerCase();
