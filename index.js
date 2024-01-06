@@ -71,44 +71,7 @@ function playRound(playerChoice, computerChoice){
     return result;
 }
 
-// Implementing the BO5 game function
 
-function best_of_five(){
-    //Take input from user using prompt
-    let roundsLeft = 5;
-    
-    // Initialising the player and computer score to 0
-    let playerScore = 0; 
-    let computerScore = 0;
 
-    // Run a while loop until there are no rounds left
-    while(roundsLeft>0){
-        let playerChoice = prompt("Pick one: Rock, Paper or Scissors");
-        let computerChoice = getComputerChoice();
-        // Get the result of 1 round from playRound function
-        let roundResult = playRound(playerChoice, computerChoice);
-        
-        // If round lost, decrement rounds left and increase computer score
-        if(roundResult==0){
-            roundsLeft--;
-            computerScore += 1;
-        }
 
-        // If round won, decrement rounds left and increase player score
-        else if(roundResult==2){
-            roundsLeft--;
-            playerScore += 1;
-        }
-    }
-    //At the end check who has the higher score and declare the winner
-    if(playerScore>computerScore){
-        console.log("You won the game!");
-    }
-    else{
-        console.log("You lost the game. Better luck next time!");
-    }
-
-}
-
-best_of_five();
 
