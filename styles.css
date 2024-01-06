@@ -6,6 +6,7 @@ h1{
 body{
     background-color: #222831;
     margin: 0px;
+    font-family: Arial;
 }
 
 .header{
@@ -43,15 +44,15 @@ body{
 .players{
     /* background-color: lightblue; */
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     margin-top: 40px;
 }
 
-/* .player-info,
-.computer-info{
-    background-color: lightpink; 
-} */
+.player-info
+{
+    margin-right: 80px; 
+} 
 
 .player-choice,
 .computer-choice{
@@ -64,10 +65,57 @@ body{
 
 .player-score, 
 .computer-score{
-    margin-top: 20px;
+    margin-top: 35px;
     color: #dddddd;
     font-weight: bold;
     font-size: 20px;
+    text-align: center;
 }
 
+.options{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.rock,
+.paper,
+.scissors{
+    font-size: 100px;
+    margin-right: 25px;
+    border-radius: 17px;
+    background-color: #393e46;
+    border: none;
+    padding-bottom: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.rock:hover, 
+.paper:hover,
+.scissors:hover{
+    background-color: #4c535e;
+}
+
+.rock:active, 
+.paper:active,
+.scissors:active{
+    background-color: #5c6572;
+}
+
+.footer{
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.github-link{
+    color: white;
+    text-decoration: none;
+}
+
+.githubLogo{
+    height: 20px;
+    vertical-align: middle;
+}
 
