@@ -1,0 +1,18 @@
+h1{
+    font-family: 'Press Start 2P', system-ui;
+    color: #fac650;
+}
+
+body{
+    background-color: #222831;
+    margin: 0px;
+}
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #111720;
+    width: 100%;
+    padding-top: 17px;
+    padding-bottom: 17px;
+}
