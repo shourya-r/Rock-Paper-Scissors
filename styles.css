@@ -7,6 +7,7 @@ body{
     background-color: #222831;
     margin: 0px;
 }
+
 .header{
     display: flex;
     justify-content: center;
@@ -15,4 +16,58 @@ body{
     width: 100%;
     padding-top: 17px;
     padding-bottom: 17px;
+    margin-bottom: 50px;
 }
+
+.scoreboard{
+    /* background-color: violet;  */
+    font-family: Arial;
+}
+
+.round-result,
+.round-description{
+    text-align: center;
+    font-weight: bold;
+    color: #dddddd;
+}
+
+.round-result{
+    font-size: 33px;
+    margin-bottom: 15px;
+}
+
+.round-description{
+    font-size: 25px;
+}
+
+.players{
+    /* background-color: lightblue; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 40px;
+}
+
+/* .player-info,
+.computer-info{
+    background-color: lightpink; 
+} */
+
+.player-choice,
+.computer-choice{
+    text-align: center;
+    height: 100px;
+    font-size: 100px;
+    color: #dddddd;
+    font-weight: bold;
+}
+
+.player-score, 
+.computer-score{
+    margin-top: 20px;
+    color: #dddddd;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
