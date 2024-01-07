@@ -46,6 +46,14 @@ function updateScore(roundWinner){
         computerScore++;
     }
     displayScore();
+    if (playerScore===5){
+        modal.showModal();
+        endMessage.textContent = "You won!";
+    }
+    else if(computerScore===5){
+        modal.showModal();
+        endMessage.textContent = "You lost!";
+    }
 }
 
 function capitaliseFirstLetter(string){
