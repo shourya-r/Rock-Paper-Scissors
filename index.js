@@ -11,12 +11,11 @@ function getComputerChoice(){
     return getRandom(choices);
 }
 
-
 // Function that will play 1 round for us 
 // Takes playerChoice and computerChoice as input
 function playRound(playerChoice, computerChoice){
-    console.log("You picked: " + playerChoice.slice(0,1).toUpperCase() + playerChoice.slice(1).toLowerCase());
-    console.log("Computer picked: " + computerChoice.slice(0,1).toUpperCase() + computerChoice.slice(1).toLowerCase());
+    console.log("You picked: " + capitaliseFirstLetter(playerChoice));
+    console.log("Computer picked: " + capitaliseFirstLetter(computerChoice));
 
     // convert string to lowercase to account for irregularly
     // capitalised inputs from player
@@ -70,6 +69,13 @@ function playRound(playerChoice, computerChoice){
     }
     return result;
 }
+
+function capitaliseFirstLetter(string){
+    return string.slice(0,1).toUpperCase() + string.slice(1).toLowerCase();
+}
+
+playRound("ROck", "PapER");
+// UI
 
 
 
