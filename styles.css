@@ -149,3 +149,11 @@ body{
     border-radius: 20px;
 }
 
+.play-again-button:hover{
+    opacity: 0.85;
+}
+
+.play-again-button:active{
+    opacity: 0.7;
+}
+
