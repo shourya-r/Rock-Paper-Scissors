@@ -78,7 +78,7 @@ const scissorsButton = document.querySelector(".scissors");
 // References to the modal
 const modal = document.querySelector(".modal");
 const endMessage = document.querySelector(".end-message");
-const playAgainButton = document.querySelector("play-again-button");
+const playAgainButton = document.querySelector(".play-again-button");
 
 //Make a function to display the choices
 function displayChoice(playerChoice, computerChoice){
@@ -135,9 +135,26 @@ function displayScore(){
     computerScoreDisplay.textContent = `Computer : ${computerScore}`;
 }
 
+// Make a function to reset the state of the game
+function resetState(){
+    roundResult.textContent = "Choose : Rock, Paper or Scissors";
+    roundDescription.textContent = "First to score 5 points wins!";
+    playerChoiceDisplay.textContent = "?";
+    playerScoreDisplay.textContent = "Player : 0";
+    computerChoiceDisplay.textContent = "?";
+    computerScoreDisplay.textContent = "Computer : 0";
+    playerScore = 0; 
+    computerScore = 0;
+}
+
 // Add event handlers to the buttons
 rockButton.addEventListener('click',() => findWinner("ROCK"));
 paperButton.addEventListener('click',() => findWinner("PAPER"));
 scissorsButton.addEventListener('click',() => findWinner("SCISSORS"));
 
+//Adding event handlers to the play again button
+playAgainButton.addEventListener('click', () => {
+    modal.close();
+    resetState();
+});
 
