@@ -15,7 +15,7 @@ function getComputerChoice(){
 }
 
 // Function that will play 1 round for us 
-// Takes playerChoice and computerChoice as input
+// Takes playerChoice as input
 function findWinner(playerChoice){ 
     let roundWinner;
     const computerChoice = getComputerChoice();
@@ -34,6 +34,7 @@ function findWinner(playerChoice){
         roundWinner = "Tie";
     }
     displayWinner(roundWinner);
+    displayDescription(roundWinner, playerChoice, computerChoice);
 }
 
 function capitaliseFirstLetter(string){
@@ -44,7 +45,7 @@ function capitaliseFirstLetter(string){
 
 // References to elements in the scoreboard
 const roundResult = document.querySelector(".round-result");
-const roundDescription = document.querySelector("round-description");
+const roundDescription = document.querySelector(".round-description");
 const playerChoiceDisplay = document.querySelector(".player-choice");
 const computerChoiceDisplay = document.querySelector(".computer-choice");
 const playerScoreDisplay = document.querySelector(".player-score");
@@ -91,11 +92,22 @@ function displayWinner(roundWinner){
     }
 }
 
+//Making a function to display the round description
+function displayDescription(roundWinner, playerChoice, computerChoice){
+    if(roundWinner==="Player"){
+        roundDescription.textContent = `${capitaliseFirstLetter(playerChoice)} beats ${capitaliseFirstLetter(computerChoice)}`;
+    }
+    else if(roundWinner==="Computer"){
+        roundDescription.textContent = `${capitaliseFirstLetter(playerChoice)} is beaten by ${capitaliseFirstLetter(computerChoice)}`;
+    }
+    else{
+        roundDescription.textContent = `${capitaliseFirstLetter(playerChoice)} ties with ${capitaliseFirstLetter(computerChoice)}`;
+    }
+}
+
 // Add event handlers to the buttons
 rockButton.addEventListener('click',() => findWinner("ROCK"));
 paperButton.addEventListener('click',() => findWinner("PAPER"));
 scissorsButton.addEventListener('click',() => findWinner("SCISSORS"));
-
-
 
 
