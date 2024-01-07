@@ -33,6 +33,7 @@ function findWinner(playerChoice){
     else{
         roundWinner = "Tie";
     }
+    displayWinner(roundWinner);
 }
 
 function capitaliseFirstLetter(string){
@@ -74,6 +75,19 @@ function displayChoice(playerChoice, computerChoice){
     }
     else{
         computerChoiceDisplay.textContent = "✌️";
+    }
+}
+
+//Making a function to display the round winner
+function displayWinner(roundWinner){
+    if(roundWinner==="Player"){
+        roundResult.textContent = "You won!";
+    }
+    else if(roundWinner==="Computer"){
+        roundResult.textContent = "You lost!";
+    }
+    else{
+        roundResult.textContent = "It's a tie!";
     }
 }
 
