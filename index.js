@@ -35,6 +35,17 @@ function findWinner(playerChoice){
     }
     displayWinner(roundWinner);
     displayDescription(roundWinner, playerChoice, computerChoice);
+    updateScore(roundWinner);
+}
+
+function updateScore(roundWinner){
+    if(roundWinner==="Player"){
+        playerScore++;
+    }
+    else if(roundWinner==="Computer"){
+        computerScore++;
+    }
+    displayScore();
 }
 
 function capitaliseFirstLetter(string){
@@ -49,7 +60,7 @@ const roundDescription = document.querySelector(".round-description");
 const playerChoiceDisplay = document.querySelector(".player-choice");
 const computerChoiceDisplay = document.querySelector(".computer-choice");
 const playerScoreDisplay = document.querySelector(".player-score");
-const computerScoreDisplay = document.querySelector(".computer-choice");
+const computerScoreDisplay = document.querySelector(".computer-score");
 
 //References to buttons 
 const rockButton = document.querySelector(".rock");
@@ -103,6 +114,12 @@ function displayDescription(roundWinner, playerChoice, computerChoice){
     else{
         roundDescription.textContent = `${capitaliseFirstLetter(playerChoice)} ties with ${capitaliseFirstLetter(computerChoice)}`;
     }
+}
+
+// Function to display the score 
+function displayScore(){
+    playerScoreDisplay.textContent = `Player : ${playerScore}`;
+    computerScoreDisplay.textContent = `Computer : ${computerScore}`;
 }
 
 // Add event handlers to the buttons
