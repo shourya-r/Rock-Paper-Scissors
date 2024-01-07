@@ -1,10 +1,13 @@
+let playerScore = 0;
+let computerScore = 0; 
+
 // Function to get random element from a list
 function getRandom(list){
     return list[Math.floor(Math.random()*list.length)];
 }
 
 // List that represents the choices available
-let choices = ["rock", "paper", "scissors"];
+const choices = ["ROCK", "PAPER", "SCISSORS"];
 
 // Function to get the computer's choice using getRandom
 function getComputerChoice(){
@@ -13,69 +16,66 @@ function getComputerChoice(){
 
 // Function that will play 1 round for us 
 // Takes playerChoice and computerChoice as input
-function playRound(playerChoice, computerChoice){
-    console.log("You picked: " + capitaliseFirstLetter(playerChoice));
-    console.log("Computer picked: " + capitaliseFirstLetter(computerChoice));
-
-    // convert string to lowercase to account for irregularly
-    // capitalised inputs from player
-    let playerChoice_lower = playerChoice.toLowerCase();
-    let computerChoice_lower = computerChoice.toLowerCase();
-    
-    // 2D Result Array
-    let resultArr = [
-        //         R P S
-            /*R*/ [1,0,2],
-            /*P*/ [2,1,0],
-            /*S*/ [0,2,1],
-        ]
-    
-    // Define indexes for player choice and computer choice to check result
-    // from 2D Array
-    let playerIndex; 
-    let computerIndex;
-    if(playerChoice_lower==="rock"){
-        playerIndex = 0;
+function findWinner(playerChoice){ 
+    let roundWinner;
+    const computerChoice = getComputerChoice();
+    displayChoice(playerChoice, computerChoice);
+    if(playerChoice==="ROCK" && computerChoice==="SCISSORS" ||
+    playerChoice==="PAPER" && computerChoice==="ROCK" ||
+    playerChoice==="SCISSORS" && computerChoice==="PAPER"){
+        roundWinner = "Player";
     }
-    else if(playerChoice_lower==="paper"){
-        playerIndex = 1;
+    else if(playerChoice==="ROCK" && computerChoice==="PAPER" ||
+    playerChoice==="PAPER" && computerChoice==="SCISSORS" ||
+    playerChoice==="SCISSORS" && computerChoice==="ROCK"){
+        roundWinner = "Computer";
     }
     else{
-        playerIndex = 2;
+        roundWinner = "Tie";
     }
-
-    if(computerChoice_lower==="rock"){
-        computerIndex = 0;
-    }
-    else if(computerChoice_lower==="paper"){
-        computerIndex = 1;
-    }
-    else{
-        computerIndex = 2;
-    }
-    
-    //Fetch the result from resultArr based on the indices
-    let result = resultArr[playerIndex][computerIndex];
-
-    // return the output based on result
-    if(result === 0){
-        console.log("You lost the round!");
-    }
-    else if(result === 1){
-        console.log("The round is a tie!");
-    }
-    else{
-        console.log("You won the round!");
-    }
-    return result;
 }
 
 function capitaliseFirstLetter(string){
     return string.slice(0,1).toUpperCase() + string.slice(1).toLowerCase();
 }
 
-playRound("ROck", "PapER");
 // UI
+
+// References to elements in the scoreboard
+const roundResult = document.querySelector(".round-result");
+const roundDescription = document.querySelector("round-description");
+const playerChoiceDisplay = document.querySelector(".player-choice");
+const computerChoiceDisplay = document.querySelector(".computer-choice");
+const playerScoreDisplay = document.querySelector(".player-score");
+const computerScoreDisplay = document.querySelector(".computer-choice");
+
+//References to buttons 
+const rockButton = document.querySelector(".rock");
+const paperButton = document.querySelector(".paper");
+const scissorsButton = document.querySelector(".scissors");
+
+//Make a function to display the choices
+function displayChoice(playerChoice, computerChoice){
+    if(playerChoice === "ROCK"){
+        playerChoiceDisplay.textContent = "✊";
+    }
+    else if(playerChoice === "PAPER"){
+        playerChoiceDisplay.textContent = "✋";
+    }
+    else{
+        playerChoiceDisplay.textContent = "✌️";
+    }
+
+    if(computerChoice === "ROCK"){
+        computerChoiceDisplay.textContent = "✊";
+    }
+    else if(computerChoice === "PAPER"){
+        computerChoiceDisplay.textContent = "✋";
+    }
+    else{
+        computerChoiceDisplay.textContent = "✌️";
+    }
+}
 
 
 
