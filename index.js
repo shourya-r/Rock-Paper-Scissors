@@ -67,6 +67,11 @@ const rockButton = document.querySelector(".rock");
 const paperButton = document.querySelector(".paper");
 const scissorsButton = document.querySelector(".scissors");
 
+// References to the modal
+const modal = document.querySelector(".modal");
+const endMessage = document.querySelector(".end-message");
+const playAgainButton = document.querySelector("play-again-button");
+
 //Make a function to display the choices
 function displayChoice(playerChoice, computerChoice){
     if(playerChoice === "ROCK"){
