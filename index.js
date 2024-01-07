@@ -77,6 +77,10 @@ function displayChoice(playerChoice, computerChoice){
     }
 }
 
+// Add event handlers to the buttons
+rockButton.addEventListener('click',() => findWinner("ROCK"));
+paperButton.addEventListener('click',() => findWinner("PAPER"));
+scissorsButton.addEventListener('click',() => findWinner("SCISSORS"));
 
 
 
